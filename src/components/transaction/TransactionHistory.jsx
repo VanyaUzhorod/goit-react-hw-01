@@ -1,21 +1,23 @@
+import css from "./TransactionHistory.module.css";
+
 const TransactionHistory = ({ items }) => {
   return (
-    <table>
-      <thead>
+    <table className={css.table}>
+      <thead className={css.tableThead}>
         <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
+          <th className={css.thItem}>Type</th>
+          <th className={css.thItem}>Amount</th>
+          <th className={css.thItem}>Currency</th>
         </tr>
       </thead>
 
-      <tbody>
+      <tbody className={css.tbBody}>
         {items.map((data) => {
           return (
-            <tr key={data.id}>
-              <td>{data.type}</td>
-              <td>{data.amount}</td>
-              <td>{data.currency}</td>
+            <tr className={css.tr} key={data.id}>
+              <td className={css.type}>{data.type}</td>
+              <td className={css.amount}>{data.amount}</td>
+              <td className={css.currency}>{data.currency}</td>
             </tr>
           );
         })}
